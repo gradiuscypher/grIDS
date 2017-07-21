@@ -98,6 +98,19 @@ Edit the file `/etc/elasticsearch/elasticsearch.yml` and find the lines below, c
 network.host: 0.0.0.0
 ```
 
+#### Configure the JVM settings
+Edit the file `/etc/elasticsearch/jvm.options`
+
+Change the heap size to something appropriate to how much ram your system has. The documentation is good. For example:
+```
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+
+-Xms3g
+-Xmx3g
+```
+
+
 #### Enable Elasticsearch to start on boot
 ```
 systemctl enable elasticsearch
