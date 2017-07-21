@@ -87,6 +87,16 @@ echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee 
 ```
 sudo apt-get update && sudo apt-get install elasticsearch
 ```
+#### Configure Elasticsearch to listen on 0.0.0.0
+Edit the file `/etc/elasticsearch/elasticsearch.yml` and find the lines below, change network.host to 0.0.0.0
+
+```
+# ---------------------------------- Network -----------------------------------
+#
+# Set the bind address to a specific IP (IPv4 or IPv6):
+#
+network.host: 0.0.0.0
+```
 
 #### Enable Elasticsearch to start on boot
 ```
@@ -124,13 +134,44 @@ root@grIDS:~# curl localhost:9200
 }
 ```
 
-#### Configure Elasticsearch to listen on 0.0.0.0
-Edit the file `/etc/elasticsearch/elasticsearch.yml` and find the lines below, change network.host to 0.0.0.0
+## Kibana
+
+#### Installation
+If you followed the previous instructions for setting up the Elastic APT repo, you can now just install Kibana via apt
 
 ```
-# ---------------------------------- Network -----------------------------------
-#
-# Set the bind address to a specific IP (IPv4 or IPv6):
-#
-network.host: 0.0.0.0
+apt-get install kibana
+```
+
+#### Configure Kibana to listen on 0.0.0.0
+Edit the file `/etc/kibana/kibana.yml` and find the lines below, change server.host to 0.0.0.0
+
+```
+# Specifies the address to which the Kibana server will bind. IP addresses and host names are both valid values.
+# The default is 'localhost', which usually means remote machines will not be able to connect.
+# To allow connections from remote users, set this parameter to a non-loopback address.
+server.host: 0.0.0.0
+```
+
+#### Enable Kibana to start at boot
+```
+systemctl enable kibana
+```
+
+#### Start Kibana
+```
+systemctl start kibana
+```
+
+#### Check the logs to ensure Kibana is happy
+```
+root@grIDS:~# journalctl -u kibana
+-- Logs begin at Fri 2017-07-21 10:31:00 PDT, end at Fri 2017-07-21 12:17:06 PDT. --
+Jul 21 12:16:58 grIDS systemd[1]: Started Kibana.
+```
+
+#### Connect to the Kibana web interface
+Navigate your browser to the IP you set up earlier on the port 5601. You should be greeted with an index setup page, for example:
+```
+http://192.168.1.209:5601
 ```
