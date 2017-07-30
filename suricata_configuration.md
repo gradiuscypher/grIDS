@@ -46,6 +46,12 @@ A line based log, sends output to the file `/var/log/suricata/fast.log` by defau
 #### eve-log
 Extensible Event Format (nicknamed EVE) is a JOSN format log that contains many different subsets of information. This is the log we'll be leveraging to ship off to Elastic. It's important to leave this enabled.
 
+First, add a setting to rotate the eve.json file every time suricata is restarted (called `append: no`):
+```
+filename: eve.json
+append: no
+```
+
 Below are each of the output types that eve.json will ship.
 
 ##### alert
