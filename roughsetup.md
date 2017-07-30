@@ -196,3 +196,18 @@ Navigate your browser to the IP you set up earlier on the port 5601. You should 
 ```
 http://192.168.1.209:5601
 ```
+
+# Suricata Configuration
+Suricata is an open source network intrusion detection/prevention software. You can learn more about it [HERE](https://suricata-ids.org/). We'll feed Suricata our network traffic, Suricata will run it through the ruleset we've configured and then will send alerts and logs to our Elastic stack for investigation.
+
+#### Installing Suricata
+We're going to use the PPA provided by OSIF to make our updating a little bit easier. More information about OSIF can be found [HERE](https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Ubuntu_Installation_-_Personal_Package_Archives_(PPA))
+
+When we install Suricata this way, it also downloads the latest EmergingThreats IDS ruleset. We'll talk more about rules and configuration a bit later.
+
+```
+sudo add-apt-repository ppa:oisf/suricata-stable
+sudo apt-get update
+sudo apt-get install suricata
+```
+
