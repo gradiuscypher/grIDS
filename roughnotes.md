@@ -30,3 +30,7 @@
 
 ### Finishing Touches
 * Configure Kibana Dashboards and export settings
+
+### Documentation/Process
+* What are Suricata rules
+* Managing suricata rules
