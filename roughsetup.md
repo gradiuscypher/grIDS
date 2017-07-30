@@ -200,7 +200,7 @@ http://192.168.1.209:5601
 # Suricata Configuration
 Suricata is an open source network intrusion detection/prevention software. You can learn more about it [HERE](https://suricata-ids.org/). We'll feed Suricata our network traffic, Suricata will run it through the ruleset we've configured and then will send alerts and logs to our Elastic stack for investigation.
 
-#### Installing Suricata
+## Installing Suricata
 We're going to use the PPA provided by OSIF to make our updating a little bit easier. More information about OSIF can be found [HERE](https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Ubuntu_Installation_-_Personal_Package_Archives_(PPA))
 
 When we install Suricata this way, it also downloads the latest EmergingThreats IDS ruleset. We'll talk more about rules and configuration a bit later.
@@ -211,3 +211,14 @@ sudo apt-get update
 sudo apt-get install suricata
 ```
 
+## Configuring Suricata
+
+Useful Reference: [Suricata Documentation](http://suricata.readthedocs.io/en/latest/)
+
+First we need to stop the process that started when we installed Suricata with the PPA, but enable the service to start on boot.
+```
+systemctl stop suricata
+systemctl enable suricata
+```
+
+Next we'll work on getting through the important bits of the Suricata config file. There are thousands of lines, and many tweaks you can do to improve performance and enable features, but we'll focus on the basics. As we make changes to the configuration, we'll be launching Suricata on the command line to ensure everything is working.
