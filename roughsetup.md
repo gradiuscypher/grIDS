@@ -61,6 +61,14 @@ Validating traffic is difficult if you're not aware of what might be passing thr
 root@grIDS:~# tcpdump -i enp8s0
 ```
 
+#### Promisc on boot
+Now that the configuration has been validated, save these settings to `/etc/network/interfaces`:
+```
+up ip link set $INTERFACE multicast off
+up ip link set $INTERFACE up
+up ip link set $INTERFACE promisc on
+```
+
 # Elastic stack setup and configuration
 
 ## Pre-requisite - Java
