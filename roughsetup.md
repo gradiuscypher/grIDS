@@ -222,3 +222,8 @@ systemctl enable suricata
 ```
 
 Next we'll work on getting through the important bits of the Suricata config file. There are thousands of lines, and many tweaks you can do to improve performance and enable features, but we'll focus on the basics. As we make changes to the configuration, we'll be launching Suricata on the command line to ensure everything is working.
+
+#### HOME_NET and EXTERNAL_NET
+Each rule written for Suricata has a direction of traffic flow that it's looking for. The setting list `HOME_NET` is considered the local network that you're monitoring. `EXTERNAL_NET` is the outside networks that you're monitoring traffic from.
+
+It is important to get these settings right, as it impacts how the rules are interpreted. For example, my `HOME_NET` is going to be configured as ` HOME_NET: "[192.168.1.0/24]"` since I have a small homelab network on that IP space. For `EXTERNAL_NET`, my network is configured as `EXTERNAL_NET: "!$HOME_NET"` which is shorthand for everything else that isn't inside `HOME_NET`.
