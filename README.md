@@ -28,8 +28,12 @@ This step is all about configuring the NSM tool called Bro
 
 [Bro Configuration]()
 
-# Future Additions
-This is a list of future tools that could be added to this toolset for even more features.
+# Future Additions + Modifications
+This is a list of future tools that could be added to this toolset for even more features. Also includes modifications.
 
+#### Features
 * Sysmon logging
 * Centralized Logging
+
+#### Modifications
+* Performance tuning for Elastic Stack
