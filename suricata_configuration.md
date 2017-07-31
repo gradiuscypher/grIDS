@@ -137,6 +137,3 @@ You should see output, and then a line ending with something like:
 ```
 
 Let this run for about a minute, then ctrl-c the command to see what the reported packet drop was.
-
-## Sending log output to Elastic
-TODO: Complete this with Filebeat or Filebeat+Logstash
