@@ -101,15 +101,17 @@ The remaining output settings can be left as is, but I recommend reading them to
 
 ### Step 4: configure common capture settings
 
-#### pcap
+#### af-packet
 This is the standard capture library, and the one we'll be using. Set the `interface` setting to the network interface you set up as the monitoring interface earlier.
 
-TODO: We'll likely run into checksum issues, so I'll have to come back and address this.
+#### pcap
+This is the standard pcap library, and the one we'll be using. Set the `interface` setting to the network interface you set up as the monitoring interface earlier.
 
 ### Remaining Configuration
 The remaining configuration for Suricata is focused mainly around performance tuning and monitoring tweaks, so the defaults are safe for most users. In the future, I believe a tuning guide might be of value for higher throughput networks.
 
-TODO: Most users will want to enable more threads for Suricata. Make this a configuration setting.
+#### VLAN Configuration
+If you're only seeing partial traffic (seeing DNS and netflow, but not seeing HTTP and other traffic), you might have to disable vlan tagging. Search for `vlan` and change the setting `use-for-tracking: false`
 
 ### Testing Suricata Configuration
 Now that configuration is complete, we'll want to test our install from the command line, with more verbose options, to see where anything has failed.
