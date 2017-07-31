@@ -34,6 +34,9 @@ This is a list of future tools that could be added to this toolset for even more
 #### Features
 * Sysmon logging
 * Centralized Logging
+* Webhook integration for alerts
+* Kibana dashboard exports
+* FPC and usability tools
 
 #### Modifications
 * Performance tuning for Elastic Stack
