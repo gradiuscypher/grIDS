@@ -176,7 +176,14 @@ apt-get install filebeat
 ```
 
 #### Configuration
-The configuration file for Filebeat can be found at `/etc/filebeat/filebeat.yml`. We're going to make a few changes to ensure our data is being shipped to it.
+First let's make sure Elasticsearch is ready for Filebeat type data:
+
+Upload the Filebeat template to Elasticsearch:
+```
+curl -H 'Content-Type: application/json' -XPUT 'http://localhost:9200/_template/filebeat' -d@/etc/filebeat/filebeat.template.json
+```
+
+Now, configuration file for Filebeat can be found at `/etc/filebeat/filebeat.yml`. We're going to make a few changes to ensure our data is being shipped to it.
 
 Under `input_type: log` in the `paths:` section, we're going to remove the default settings and add our `eve.json` log that we'll be configuring via Suricata later.
 
@@ -185,3 +192,12 @@ Under `input_type: log` in the `paths:` section, we're going to remove the defau
 Under `Outputs` we're going to comment everything out in the `Elasticsearch output` section, and uncomment the `output.logstash` and `hosts: ["localhost:5044"]` lines.
 
 Once that's completed, restart filebeats. In a few steps, we'll check to make sure that the data is flowing from Suricata to Filebeats to Elastic, and accessable on Kibana.
+
+```
+systemctl restart filebeat
+```
+
+And check it with ...
+```
+journalctl -fu filebeat
+```
