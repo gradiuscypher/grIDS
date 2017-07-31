@@ -23,7 +23,12 @@ This step is about configuring the Suricata rule management tool, PulledPork
 
 [PulledPork Configuration]()
 
-# Future Additions + Modifications
+## Kibana Visualization and Saved Searches - TODO
+This step will help get Kibana configured with useful dashboards, visualizations, and saved searches
+
+[Kibana Visualization and Searches]()
+
+# Future Additions + Modifications + Ideas
 This is a list of future tools that could be added to this toolset for even more features. Also includes modifications.
 
 #### Features
@@ -31,7 +36,6 @@ This is a list of future tools that could be added to this toolset for even more
 * Bro logging
 * Centralized Logging
 * Webhook integration for alerts
-* Kibana dashboard exports
 * FPC and usability tools
 
 #### Modifications
