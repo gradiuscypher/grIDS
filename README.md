@@ -1,7 +1,7 @@
 # grIDS
 Pronounced "grr eye dee es" - My network monitoring solution and tools that go along with it.
 
-# Configuration Steps
+# Configuration Steps - System, Data storage, IDS software
 
 ## Setup the Hardware and the OS
 This step is all about getting the system ready for the suite of tools we're going to be installing.
