@@ -150,8 +150,21 @@ input {
     }
 }
 
+filter {
+    json {
+        source => "message"
+        remove_field => ["message"]
+    }
+}
+
 output {
-    stdout { codec => rubydebug }
+    #file { path => "/var/log/logstash/output.log" }
+    elasticsearch {
+        hosts => "localhost:9200"
+        manage_template => false
+        index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+        document_type => "%{[@metadata][type]}"
+    }
 }
 ```
 
