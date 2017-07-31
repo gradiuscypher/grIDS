@@ -22,7 +22,7 @@ systemctl stop suricata
 systemctl enable suricata
 ```
 
-Next we'll work on getting through the important bits of the Suricata config file. There are thousands of lines, and many tweaks you can do to improve performance and enable features, but we'll focus on the basics. As we make changes to the configuration, we'll be launching Suricata on the command line to ensure everything is working.
+Next we'll work on getting through the important bits of the Suricata config file. There are hundreds of lines, and many tweaks you can do to improve performance and enable features, but we'll focus on the basics. As we make changes to the configuration, we'll be launching Suricata on the command line to ensure everything is working.
 
 ### Step 1: HOME_NET and EXTERNAL_NET address-groups
 Each rule written for Suricata has a direction of traffic flow that it's looking for. The setting list `HOME_NET` is considered the local network that you're monitoring. `EXTERNAL_NET` is the outside networks that you're monitoring traffic from.
