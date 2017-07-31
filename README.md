@@ -40,3 +40,4 @@ This is a list of future tools that could be added to this toolset for even more
 
 #### Modifications
 * Performance tuning for Elastic Stack
+* Performance tuning of Suricata - spread load between CPU threads
