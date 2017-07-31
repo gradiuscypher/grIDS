@@ -23,16 +23,12 @@ This step is about configuring the Suricata rule management tool, PulledPork
 
 [PulledPork Configuration]()
 
-## Bro Configuration - TODO
-This step is all about configuring the NSM tool called Bro
-
-[Bro Configuration]()
-
 # Future Additions + Modifications
 This is a list of future tools that could be added to this toolset for even more features. Also includes modifications.
 
 #### Features
 * Sysmon logging
+* Bro logging
 * Centralized Logging
 * Webhook integration for alerts
 * Kibana dashboard exports
