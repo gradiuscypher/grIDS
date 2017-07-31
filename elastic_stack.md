@@ -125,3 +125,63 @@ Navigate your browser to the IP you set up earlier on the port 5601. You should 
 ```
 http://192.168.1.209:5601
 ```
+
+## Logstash
+Logstash will be the log aggregator for all of our log collection.
+
+#### Installation
+If you followed the previous instructions for setting up the Elastic APT repo, you can now just install Logstash via apt
+
+```
+apt-get install logstash
+```
+
+#### Configuration
+Logstash is made up of multiple configuration files that route information based on what's configured. Configs live in `/etc/logstash/conf.d`. Each configuration can have input, output, filtering, etc functions that each do different things. For more information see the [logstash documentation](https://www.elastic.co/guide/en/logstash/current/index.html).
+
+##### Logstash config for Filebeat
+To collect data into Logstash from Filebeat, we have to set up a logstash configuration.
+
+Add this to `/etc/logstash/conf.d/beats_to_elastic.conf`
+```
+input {
+    beats {
+        port => 5044
+    }
+}
+
+output {
+    stdout { codec => rubydebug }
+}
+```
+
+Once that's added to the configuration file, save and restart logstash:
+```
+systemctl restart logstash
+```
+
+Check that everything started happily:
+```
+journalctl -fu logstash
+```
+
+## Filebeats
+Filebeat is a log shipper that can take many inputs and ship to many different places. It also has a lot of resiliance to failure, with a ton of store+forward and other features built in.
+
+#### Installation
+If you followed the previous instructions for setting up the Elastic APT repo, you can now just install Filebeat via apt
+
+```
+apt-get install filebeat
+```
+
+#### Configuration
+The configuration file for Filebeat can be found at `/etc/filebeat/filebeat.yml`. We're going to make a few changes to ensure our data is being shipped to it.
+
+Under `input_type: log` in the `paths:` section, we're going to remove the default settings and add our `eve.json` log that we'll be configuring via Suricata later.
+
+`/var/log/suricata/eve.json`
+
+Under `Outputs` we're going to comment everything out in the `Elasticsearch output` section, and uncomment the `output.logstash` and `hosts: ["localhost:5044"]` lines.
+
+Once that's completed, restart filebeats. In a few steps, we'll check to make sure that the data is flowing from Suricata to Filebeats to Elastic, and accessable on Kibana.
