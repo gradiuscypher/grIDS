@@ -18,10 +18,10 @@ This step is about configuring the IDS/IPS software, Suricata.
 
 [Suricata Configuration](suricata_configuration.md)
 
-## PulledPork Configuration - TODO
+## PulledPork Configuration
 This step is about configuring the Suricata rule management tool, PulledPork
 
-[PulledPork Configuration]()
+[PulledPork Configuration](pulledpork_setup.md)
 
 ## Kibana Visualization and Saved Searches - TODO
 This step will help get Kibana configured with useful dashboards, visualizations, and saved searches
