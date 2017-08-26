@@ -6,22 +6,22 @@ Pronounced "grr eye dee es" - My network monitoring solution and tools that go a
 ## Setup the Hardware and the OS
 This step is all about getting the system ready for the suite of tools we're going to be installing.
 
-[Hardware/OS configuration](hardware_and_os.md)
+[Hardware/OS configuration](docs/hardware_and_os.md)
 
 ## Configuring the Elastic Stack
 This step is about configuring our Elastic stack to store the data that we're generating, and make it easily searchable.
 
-[Elastic Stack Configuration](elastic_stack.md)
+[Elastic Stack Configuration](docs/elastic_stack.md)
 
 ## Suricata Configuration
 This step is about configuring the IDS/IPS software, Suricata.
 
-[Suricata Configuration](suricata_configuration.md)
+[Suricata Configuration](docs/suricata_configuration.md)
 
 ## PulledPork Configuration
 This step is about configuring the Suricata rule management tool, PulledPork
 
-[PulledPork Configuration](pulledpork_setup.md)
+[PulledPork Configuration](docs/pulledpork_setup.md)
 
 ## Kibana Visualization and Saved Searches - TODO
 This step will help get Kibana configured with useful dashboards, visualizations, and saved searches
