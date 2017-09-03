@@ -18,7 +18,7 @@ This step is about configuring the IDS/IPS software, Suricata.
 
 [Suricata Configuration](docs/suricata_configuration.md)
 
-## PulledPork Configuration - TODO
+## PulledPork Configuration
 This step is about configuring the Suricata rule management tool, PulledPork
 
 [PulledPork Configuration](docs/pulledpork_setup.md)
