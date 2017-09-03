@@ -1,5 +1,5 @@
 # grIDS
-Pronounced "grr eye dee es" - My network monitoring solution and tools that go along with it.
+Pronounced "grr eye dee es" - My network monitoring solution and tools that go along with it. This setup is designed to be contained in an all-in-one sort of system, but individual services can be set up on separate services with minimal changes.
 
 # Configuration Steps - System, Data storage, IDS software
 
