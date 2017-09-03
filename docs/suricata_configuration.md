@@ -139,3 +139,10 @@ You should see output, and then a line ending with something like:
 ```
 
 Let this run for about a minute, then ctrl-c the command to see what the reported packet drop was.
+
+### Starting Suricata
+Now that we know our Suricata configuration is working, we can start it as a service:
+
+```
+systemctl start suricata
+```
