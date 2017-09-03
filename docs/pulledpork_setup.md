@@ -98,7 +98,57 @@ sid_msg=/etc/suricata/rules/sid-msg.map
 ```
 
 ## Doing a test-run of PulledPork
-TODO
+If everything is configured properly, this command should grab the Suricata rules from Emerging Threats and save them to `/etc/suricata/rules/downloaded.rules`. This command should be run every time we want to update the ruleset. ET updates rules quite often, so we'll want to put a script that updates these rules and restart Suricata.
+
+**Note:** PulledPork saves the downloaded rules tarbal to `/tmp/`. It will not process the rules or download them again if they match. If you wish to test this command again, you may have to delete the downloaded rules from `/tmp/`
+
+```
+root@grIDS:~# pulledpork.pl -c /etc/pulledpork/pulledpork.conf -T -S suricata-4.0.0
+
+    https://github.com/shirkdog/pulledpork
+      _____ ____
+     `----,\    )
+      `--==\\  /    PulledPork v0.7.3 - Making signature updates great again!
+       `--==\\/
+     .-~~~~-.Y|\\_  Copyright (C) 2009-2016 JJ Cummings
+  @_/        /  66\_  cummingsj@gmail.com
+    |    \   \   _(")
+     \   /-| ||'--'  Rules give me wings!
+      \_\  \_\\
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Checking latest MD5 for emerging.rules.tar.gz....
+Rules tarball download of emerging.rules.tar.gz....
+        They Match
+        Done!
+Prepping rules from emerging.rules.tar.gz for work....
+        Done!
+Reading rules...
+Reading rules...
+Setting Flowbit State....
+        Enabled 109 flowbits
+        Done
+Writing /etc/suricata/rules/downloaded.rules....
+        Done
+Generating sid-msg.map....
+        Done
+Writing v1 /etc/suricata/rules/sid-msg.map....
+        Done
+Writing /var/log/sid_changes.log....
+        Done
+Rule Stats...
+        New:-------0
+        Deleted:---0
+        Enabled Rules:----18053
+        Dropped Rules:----0
+        Disabled Rules:---4744
+        Total Rules:------22797
+No IP Blacklist Changes
+
+Done
+Please review /var/log/sid_changes.log for additional details
+Fly Piggy Fly!
+```
 
 ## Automated scripts and cron setup
 TODO
