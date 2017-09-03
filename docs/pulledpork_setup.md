@@ -186,4 +186,13 @@ root@grIDS:~/scripts# chmod +x update_rules.sh
 ```
 
 ### Configure root crontab
-TODO
+Now that we have a script to run, let's set it up in crontab to execute every 15 minutes, that way we can pick up the rules as soon as possible.
+
+```
+root@grIDS:~/scripts# crontab -e
+```
+
+Add this to the bottom:
+```
+*/15 * * * * /root/scripts/update-rules.sh
+```
