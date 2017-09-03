@@ -153,7 +153,7 @@ Fly Piggy Fly!
 ## Automated scripts and cron setup
 Since the Emerging Threats ruleset can change as often as they push new rules, we'll want to download them as soon as they're out. We'll do that with our `update-rules.sh` script found [here](https://github.com/gradiuscypher/grIDS/blob/master/scripts/update_rules.sh).
 
-## Download update-rules.sh and chmod
+### Download update-rules.sh and chmod
 ```
 gradius@grIDS:~$ sudo -i
 root@grIDS:~# mkdir scripts
@@ -175,5 +175,5 @@ update_rules.sh
 root@grIDS:~/scripts# chmod +x update_rules.sh
 ```
 
-## Configure root crontab
+### Configure root crontab
 TODO
