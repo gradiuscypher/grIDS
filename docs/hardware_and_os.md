@@ -1,10 +1,12 @@
 # Network Hardware Configuration
 This will be left as an exercise for the reader. Essentially, you'll need the capabiltiy to mirror the port on your switch that's attached to your next hop (modem, next hop network, etc). This way, you will be able to collect all information coming in and out of this network. This does come with the limitation of missing traffic that doesn't traverse this port, like intra-switch traffic. I'm not a networking hardware person though, so there might better way of doing this.
 
-TL;DR - Get the traffic you want to see on the IDS to a network port on the IDS.
+TL;DR - Get the traffic you want to see on the IDS to a network port on the IDS system. I'm currently using a Ubiquiti 8 port PoE switch, mirroring 7 of those ports to a single port that is plugged into the second NIC of my IDS box.
 
 # PC Hardware Configuration
 You'll want a system that matches your network throughput. A key requirement is multiple NICs - one as the management interface, and one for traffic monitoring from your mirror port.
+
+For a rough baseline, on a 200Mbs down/20Mbs up Internet connection, I'm using a Shuttle PC with a Core i5 and 8GB of RAM, along with an SSD for the OS. Even while running a full Elastic stack along with Suricata, it's not struggling to keep up. The only real limitation you'll have to pay attention to is how long you'll want to retain PCAP files, as that's all about storage.
 
 # OS Configuration
 
