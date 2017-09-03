@@ -154,10 +154,16 @@ Fly Piggy Fly!
 Since the Emerging Threats ruleset can change as often as they push new rules, we'll want to download them as soon as they're out. We'll do that with our `update-rules.sh` script found [here](https://github.com/gradiuscypher/grIDS/blob/master/scripts/update_rules.sh).
 
 ### Download update-rules.sh and chmod
+
+Prep the file location:
 ```
 gradius@grIDS:~$ sudo -i
 root@grIDS:~# mkdir scripts
 root@grIDS:~# cd scripts/
+```
+
+Download the raw file via Github with wget:
+```
 root@grIDS:~/scripts# wget https://raw.githubusercontent.com/gradiuscypher/grIDS/master/scripts/update_rules.sh
 --2017-09-03 14:47:31--  https://raw.githubusercontent.com/gradiuscypher/grIDS/master/scripts/update_rules.sh
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
@@ -172,6 +178,10 @@ update_rules.sh                                             100%[===============
 
 root@grIDS:~/scripts# ls
 update_rules.sh
+```
+
+chmod the file to make it executable:
+```
 root@grIDS:~/scripts# chmod +x update_rules.sh
 ```
 
