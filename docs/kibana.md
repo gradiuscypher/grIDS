@@ -71,7 +71,7 @@ This example visualization will be a line graph to display the count of events b
 * For X-Axis, select "X-Axis" bucket type, then for Aggregation select "Date Histogram"
 * Click the "Play" arrow in the top-right corner. This will create the visualization.
 
-![VISUALIZATON_EVENT_COUNT](images/visualization_event_count.png)
+![VISUALIZATON_EVENT_COUNT](images/visualization_event_count.PNG)
 
 #### JSON Export of Example Visualization
 You can find the JSON export [here](../kibana_exports/visualization_event_count.json).
