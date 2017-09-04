@@ -1,7 +1,9 @@
 # grIDS
-My network monitoring solution and tools that go along with it. This setup is designed to be contained in an all-in-one sort of system, but individual services can be set up on separate services with minimal changes.
+My network monitoring solution and tools that go along with it. This setup is designed to be contained in an all-in-one sort of system, but services can be separated into individual hosts if you have a higher load that requires more resources.
 
-The goal for this project is to help people combine multiple open-source tools to have a useful network monitoring solution. Feedback, corrections, and suggestions are welcomed and appreciated.
+The goal for this project is to help people combine multiple open-source tools to have a useful network monitoring solution. Within this project, I'll also include custom scripts that help make this system even more useful.
+
+Feedback, corrections, and suggestions are welcomed and appreciated. Reach out to me on [Twitter](https://www.twitter.com/0xgradius) or here on Github as an [Issue](https://github.com/gradiuscypher/grIDS/issues).
 
 # Configuration Steps
 
@@ -31,3 +33,4 @@ This is a list of future tools that could be added to this toolset for even more
 
 #### Ideas
 * IDS Sensor on a Raspberry Pi
+* Spreading services out among hosts, multiple sensor configuration and management
