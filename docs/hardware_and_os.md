@@ -1,7 +1,13 @@
 # Network Hardware Configuration
-This will be left as an exercise for the reader. Essentially, you'll need the capabiltiy to mirror the port on your switch that's attached to your next hop (modem, next hop network, etc). This way, you will be able to collect all information coming in and out of this network. This does come with the limitation of missing traffic that doesn't traverse this port, like intra-switch traffic. I'm not a networking hardware person though, so there might better way of doing this.
+Essentially, you'll need the ability to get network traffic from the ports you want to monitor to the monitoring port on the IDS system. This can be done a few different ways, either with hardware or software (if your router has the ability). 
 
-TL;DR - Get the traffic you want to see on the IDS to a network port on the IDS system. I'm currently using a Ubiquiti 8 port PoE switch, mirroring the WAN port to the second NIC of my IDS box. If your router supports iptables, you can also mirror the traffic using iptables rules.
+With hardware, you can use a switch to span/mirror the port going to your WAN. This way, you're capturing all traffic that comes into and leaves your network. One downside to spanning the WAN is that you miss traffic that never crosses the WAN, but we still see most traffic including malware callbacks, C&C, etc (the things you want to spot).
+
+With hardware, you can also build a network tap that goes between your LAN and WAN. I'm not using this method, so I don't have documentation for this approach. I personally don't like this approach, as it puts our system inbetween LAN and WAN traffic, and if it fails incorrectly, the network can be taken offline. I'll collect some network tap guides for a later update for those that want to try this approach.
+
+With software (if your router hardware supports it), you could use iptables to mirror all traffic to another device on the network. I haven't tried this method yet, but I know people have successfully used this approach in the past. Currently, I don't have any documentation for this approach, but I'll collect some guides for a later update.
+
+TL;DR - Get the traffic you want to see on the IDS to a network port on the IDS system. I'm currently using a Ubiquiti 8 port PoE switch, mirroring the WAN port to the second NIC of my IDS box. If your router supports iptables, you can also mirror the traffic using iptables rules. You can also use a hardware network tap.
 
 # PC Hardware Configuration
 You'll want a system that matches your network throughput. A key requirement is multiple NICs - one as the management interface, and one for traffic monitoring from your mirror port.
@@ -57,7 +63,7 @@ root@grIDS:~# ip link set enp8s0 up
 Validating traffic is difficult if you're not aware of what might be passing through the network. The best approach I've found to ensure you're not only seeing broadcast traffic is to use tcpdump to check that you're seeing common network traffic like HTTP/DNS/etc. Try navigating to a site that uses only HTTP (`ragu.com` is an option).
 
 ```
-root@grIDS:~# tcpdump -i enp8s0
+root@grIDS:~# tcpdump -i $INTERFACE port 80
 ```
 
 #### Promisc on boot
