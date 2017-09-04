@@ -31,7 +31,7 @@ The Suricata config can be found at : `/etc/suricata/suricata.yaml`
 ### Step 1: HOME_NET and EXTERNAL_NET address-groups
 Each rule written for Suricata has a direction of traffic flow that it's looking for. The setting list `HOME_NET` is considered the local network that you're monitoring. `EXTERNAL_NET` is the outside networks that you're monitoring traffic from.
 
-It is important to get these settings right, as it impacts how the rules are interpreted. Incorrect address-groups can lead to both false positives and false negatives. In larger networks, this could also lead to a LOT of alerts that are garbage. Other than `HOME_NET` and `EXTERNAL_NET` you also need to evaluate each of the other address groups (eg: `HTTP_SERVERS`). You don't want HTTP alerts for non-HTTP servers.
+It is important to get these settings right, as it impacts how the rules are interpreted. Incorrect address-groups can lead to both false positives and false negatives. Other than `HOME_NET` and `EXTERNAL_NET` you also need to evaluate each of the other address groups (eg: `HTTP_SERVERS`). Address groups help Suricata determine if it needs to apply rules to traffic it's monitoring.
 
 For example settings, my `HOME_NET` is going to be configured as ` HOME_NET: "[192.168.1.0/24]"` since I have a small homelab network on that IP space. For `EXTERNAL_NET`, my network is configured as `EXTERNAL_NET: "!$HOME_NET"` which is shorthand for everything else that isn't inside `HOME_NET`.
 
