@@ -52,7 +52,7 @@ For the Lucene query, we'll be using `event_type:alert`. This allows us to only 
 #### Field Columns
 As mentioned in the overview, you can click the columns button on each relevant field to show them in the Discover screen. Afterwards, you'll end up with something like this:
 
-![SAVED_ALERTS](images/)
+![SAVED_ALERTS](images/saved_alerts.png)
 
 ## Example Visualization
 TODO
