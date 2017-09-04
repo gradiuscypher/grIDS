@@ -17,7 +17,7 @@ Download PulledPork from their [Github](https://github.com/shirkdog/pulledpork) 
 root@grIDS:~# git clone https://github.com/shirkdog/pulledpork.git
 ```
 
-### Install required PulledPork modules
+### Install required Perl modules
 ```
 root@grIDS:~/pulledpork# apt-get install libwww-perl libcrypt-ssleay-perl
 ```
