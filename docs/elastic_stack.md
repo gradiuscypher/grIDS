@@ -1,7 +1,7 @@
 # Elastic stack setup and configuration
 
 ## Pre-requisite - Java
-This is to install the default OpenJRE, but you can also install Oracle Java if you'd prefer. I'm unaware of performance impact recently between the two, but it's something to consider.
+This is to install the default OpenJRE, but you can also install Oracle Java if you'd prefer. I'm unaware of performance impact between the two, but it may be something to consider.
 
 ```
 sudo apt-get install default-jre
@@ -38,7 +38,7 @@ network.host: 0.0.0.0
 #### Configure the JVM settings
 Edit the file `/etc/elasticsearch/jvm.options`
 
-Change the heap size to something appropriate to how much ram your system has. The documentation is good. For example:
+Change the heap size to something appropriate to how much ram your system has. The inline configuration documentation is good. For example:
 ```
 # Xms represents the initial size of total heap space
 # Xmx represents the maximum size of total heap space
@@ -58,7 +58,7 @@ systemctl enable elasticsearch
 systemctl start elasticsearch
 ```
 
-#### Check the logs to ensure Elasticsearch is happy
+#### Check the logs to ensure Elasticsearch is running
 ```
 root@grIDS:~# journalctl -u elasticsearch
 -- Logs begin at Fri 2017-07-21 10:31:00 PDT, end at Fri 2017-07-21 12:06:17 PDT. --
@@ -113,7 +113,7 @@ systemctl enable kibana
 systemctl start kibana
 ```
 
-#### Check the logs to ensure Kibana is happy
+#### Check the logs to ensure Kibana is running
 ```
 root@grIDS:~# journalctl -u kibana
 -- Logs begin at Fri 2017-07-21 10:31:00 PDT, end at Fri 2017-07-21 12:17:06 PDT. --
@@ -130,7 +130,7 @@ http://192.168.1.209:5601
 Logstash will be the log aggregator for all of our log collection.
 
 #### Installation
-If you followed the previous instructions for setting up the Elastic APT repo, you can now just install Logstash via apt
+If you followed the previous instructions for setting up the Elastic apt repo, you can now just install Logstash via apt
 
 ```
 apt-get install logstash
@@ -182,7 +182,7 @@ journalctl -fu logstash
 Filebeat is a log shipper that can take many inputs and ship to many different places. It also has a lot of resiliance to failure, with a ton of store+forward and other features built in.
 
 #### Installation
-If you followed the previous instructions for setting up the Elastic APT repo, you can now just install Filebeat via apt
+If you followed the previous instructions for setting up the Elastic apt repo, you can now just install Filebeat via apt
 
 ```
 apt-get install filebeat
