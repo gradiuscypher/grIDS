@@ -1,5 +1,7 @@
 # Suricata Configuration
-Suricata is an open source network intrusion detection/prevention software. You can learn more about it [HERE](https://suricata-ids.org/). We'll feed Suricata our network traffic, Suricata will run it through the ruleset we've configured and then will send alerts and logs to our Elastic stack for investigation.
+Suricata is an open source network intrusion detection/prevention software. You can learn more about it [here](https://suricata-ids.org/). We'll feed Suricata our network traffic, Suricata will run it through the ruleset we've configured and then will send alerts and logs to our Elastic stack for investigation.
+
+My example Suricata configuration file [can be found here](../configs/suricata.yaml). I highly suggest referencing this file if Suricata fails to start.
 
 ## Installing Suricata
 We're going to use the PPA provided by OSIF to make our updating a little bit easier. More information about OSIF can be found [HERE](https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Ubuntu_Installation_-_Personal_Package_Archives_(PPA))
