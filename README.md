@@ -37,3 +37,4 @@ This is a list of future tools that could be added to this toolset for even more
 * Spreading services out among hosts, multiple sensor configuration and management
 * Setting up an iptables sensor
 * Setting up a hardware network tap
+* Process for upgrading/updating the OS
