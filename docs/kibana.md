@@ -76,11 +76,13 @@ This example visualization will be a line graph to display the count of events b
 #### JSON Export of Example Visualization
 You can find the JSON export [here](../kibana_exports/visualization_event_count.json).
 
-## Example Dashboard
-TODO
-
 ## Importing Exported JSON
-TODO
+To import any of these JSON files, or to export any created objects, follow these instructions:
+
+* Click "Management" on the left-hand side bar.
+* Click "Saved Objects" on the upper tab bar.
+* To Export an object, check the object name, and press the "Export" button.
+* To Import an object, click the "Import" button in the top right. Then select the desired JSON file for imports.
 
 ## Saved Searches
 TODO
