@@ -4,7 +4,7 @@ My network monitoring solution and tools that go along with it. This setup is de
 The goal for this project is to help people combine multiple open-source tools to have a useful network monitoring solution. Feedback, corrections, and suggestions are welcomed and appreciated.
 
 # Configuration Steps
-To configure the system, follow the steps found in the [setup.md document](docs/setup.md)
+To get started with configuring the system, follow the steps found in [setup.md](docs/setup.md). Each of the sections walks you through the parts of building a working all-in-one IDS system.
 
 # Screenshots
 Screenshots of some Kibana Dashboards that have been created and powered using this setup
