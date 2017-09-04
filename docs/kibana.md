@@ -54,10 +54,16 @@ As mentioned in the overview, you can click the columns button on each relevant 
 
 ![SAVED_ALERTS](images/saved_alerts.png)
 
+#### JSON Export of Example Search
+The exported JSON can be found [here](../kibana_exports/alert_search.json). For more information on how to use this JSON, check out [this section](#importing-exported-json)
+
 ## Example Visualization
 TODO
 
 ## Example Dashboard
+TODO
+
+## Importing Exported JSON
 TODO
 
 ## Saved Searches
