@@ -6,6 +6,12 @@ The goal for this project is to help people combine multiple open-source tools t
 # Configuration Steps
 To configure the system, follow the steps found in the [setup.md document](docs/setup.md)
 
+# Screenshots
+Screenshots of some Kibana Dashboards that have been created and powered using this setup
+
+![DASH1](docs/images/overview_dash.PNG)
+![DASH2](docs/images/dashboard_alert_exploration.PNG)
+
 # Future Additions + Modifications + Ideas
 This is a list of future tools that could be added to this toolset for even more features. Also includes modifications.
 
