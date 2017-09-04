@@ -23,3 +23,5 @@ This step is about configuring the Suricata rule management tool, PulledPork
 
 ## Kibana Visualization and Saved Searches - TODO
 This step will help get Kibana configured with useful dashboards, visualizations, and saved searches
+
+[Kibana Visualization and Saved Searches](kibana.md)
