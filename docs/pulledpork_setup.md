@@ -196,3 +196,16 @@ Add this to the bottom:
 ```
 */15 * * * * /root/scripts/update-rules.sh
 ```
+
+### Change rules in suricata.yaml
+Now that we've got our new rule file set up, we'll have to configure Suricata to use it.
+
+Edit `/etc/suricata/suricata.yaml` and remove all of the entries under `rule-files`, and place a single line:
+
+```
+default-rule-path: /etc/suricata/rules
+rule-files:
+ - downloaded.rules
+```
+
+Restart Suricata with `systemctl restart suricata` to start with the new rule set.
