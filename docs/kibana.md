@@ -85,10 +85,10 @@ To import any of these JSON files, or to export any created objects, follow thes
 * To Import an object, click the "Import" button in the top right. Then select the desired JSON file for imports.
 
 ## Saved Searches
-* [Alert Searches](../kibana_exports/alert_search.json)
+* [Alert Searches](../kibana_exports/exported_searches.json)
 
 ## Saved Visualizations
-* [Event Count](../kibana_exports/visualization_event_count.json)
+* [Event Count](../kibana_exports/all_exported_visualizations.json)
 
 ## Saved Dashboards
-TODO
+* [Dashboards](../kibana_exports/exported_dashboards.json)
