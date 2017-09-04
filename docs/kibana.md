@@ -55,10 +55,26 @@ As mentioned in the overview, you can click the columns button on each relevant 
 ![SAVED_ALERTS](images/saved_alerts.png)
 
 #### JSON Export of Example Search
-The exported JSON can be found [here](../kibana_exports/alert_search.json). For more information on how to use this JSON, check out [this section](#importing-exported-json)
+The exported JSON can be found [here](../kibana_exports/alert_search.json). For more information on how to use this JSON, check out [this section](#importing-exported-json).
 
 ## Example Visualization
-TODO
+
+#### Heads up!
+Visualizations are difficult to get right, even the 100th time. It takes a lot of practice, tinkering, and Google searches. If you experience any trouble with coming up with a specific approach, reach out to me on [Twitter](https://twitter.com/0xGradius). I'm not an expert, but I like tinkering with Kibana.
+
+This example visualization will be a line graph to display the count of events being saved to Elasticsearch.
+
+#### Steps
+* Click "Visualize" on the left hand side, then click the "+" icon to create a new visualization. Click the "Line" visualization icon.
+* Click the left-hand column and the index name "filebeat-*"
+* For Y-Axis, we'll leave "Count" selected. In the future, this might be used for average value grouping, sums, percential, etc.
+* For X-Axis, select "X-Axis" bucket type, then for Aggregation select "Date Histogram"
+* Click the "Play" arrow in the top-right corner. This will create the visualization.
+
+![VISUALIZATON_EVENT_COUNT](images/visualization_event_count.png)
+
+#### JSON Export of Example Visualization
+You can find the JSON export [here](../kibana_exports/visualization_event_count.json).
 
 ## Example Dashboard
 TODO
