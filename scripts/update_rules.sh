@@ -6,34 +6,38 @@
 # Run pulledpork.pl to download newest rules, process disabled rules, and save new ruleset.
 update_rules () {
     # md5sum the current file to see if the rules change
-    if [ -f /etc/suricata/rules/downloaded.rules ]; then
-        OLD_MD5=`md5sum /etc/suricata/rules/downloaded.rules | cut -d' ' -f1`
+    if [[ -f /etc/suricata/rules/downloaded.rules ]]; then
+        old_md5=$(md5sum /etc/suricata/rules/downloaded.rules | cut -d' ' -f1)
     else
-        OLD_MD5=""
+        old_md5=""
     fi
 
     # Get suricata version for pulledpork
-    SURI_VERSION=`suricata -V | cut -d' ' -f5`
+    suri_version=$(suricata -V | cut -d' ' -f5)
 
     # run pulledpork.pl
-    pulledpork.pl -c /etc/pulledpork/pulledpork.conf -T -S suricata-$SURI_VERSION
+    pulledpork.pl -c /etc/pulledpork/pulledpork.conf -T -S suricata-"${suri_version}"
 
     # get md5sum of new file
-    NEW_MD5=`md5sum /etc/suricata/rules/downloaded.rules | cut -d' ' -f1`
+    new_md5=$(md5sum /etc/suricata/rules/downloaded.rules | cut -d' ' -f1)
 }
 
 restart_suricata () {
-    if [ "$OLD_MD5" != "$NEW_MD5" ]; then
+    if [[ "${old_md5}" != "${new_md5}" ]]; then
         echo "Restarting Suricata..."
-        systemctl restart suricata
+	if [[ -f /bin/systemctl || -f /usr/bin/systemctl ]]; then
+       	    systemctl restart suricata
+	else
+	    /etc/init.d/suricata restart
+	fi
     fi
 }
 
-# Main Loop
+# Main
 main () {
     update_rules
     restart_suricata
 }
 
-# Execute main loop
+# Execute main
 main
