@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "85998220-762f-11e7-a385-0f2eb986f8d0",
+    "_type": "search",
+    "_source": {
+      "title": "Alert Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "src_ip",
+        "src_port",
+        "dest_ip",
+        "dest_port",
+        "alert.category",
+        "alert.signature"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"filebeat-*\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"event_type:alert\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  }
+]
