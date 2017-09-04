@@ -35,8 +35,24 @@ Along with data in the center, you can also show a quick count of the top five v
 
 ![QUICK_COUNT](images/quick_count.PNG)
 
+#### Visualization
+Visualizations allow you to put data into various different graphs. You can create visualizations by clicking "+" in on the Visualizations tab.
+
+From there, you can select the type of chart. Formats include Area, Heat Map, Horizontal Bar, Line, Pie, etc. The best way to understand how visualizations format data is to click around and use them.
+
+#### Dashboard
+Dashboards are just combinations of both saved Discovery searches and Visualizations. Dashboards let you drag these pieces around and resize as needed.
+
 ## Example Search
-TODO
+All fields in Elasticsearch can be filtered/searched on. For this example, we'll be displaying all of the IDS alerts Suricata.
+
+#### Lucene Query
+For the Lucene query, we'll be using `event_type:alert`. This allows us to only see our IDS alerts.
+
+#### Field Columns
+As mentioned in the overview, you can click the columns button on each relevant field to show them in the Discover screen. Afterwards, you'll end up with something like this:
+
+![SAVED_ALERTS](images/)
 
 ## Example Visualization
 TODO
