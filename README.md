@@ -26,6 +26,7 @@ This is a list of future tools that could be added to this toolset for even more
 * Centralized Logging
 * Webhook integration for alerts
 * FPC and usability tools
+* Pi-Hole DNS service
 
 #### Modifications
 * Performance tuning for Elastic Stack
