@@ -194,7 +194,7 @@ root@grIDS:~/scripts# crontab -e
 
 Add this to the bottom:
 ```
-*/15 * * * * /root/scripts/update-rules.sh
+*/15 * * * * /root/scripts/update_rules.sh
 ```
 
 ### Change rules in suricata.yaml
