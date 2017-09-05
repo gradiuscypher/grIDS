@@ -27,6 +27,7 @@ This is a list of future tools that could be added to this toolset for even more
 * Webhook integration for alerts
 * FPC and usability tools
 * Pi-Hole DNS service
+* Include [EveBox](https://evebox.org/) for alerting
 
 #### Modifications
 * Performance tuning for Elastic Stack
