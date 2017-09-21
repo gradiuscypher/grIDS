@@ -28,6 +28,7 @@ This is a list of future tools that could be added to this toolset for even more
 * FPC and usability tools
 * Pi-Hole DNS service
 * Include [EveBox](https://evebox.org/) for alerting
+* Include [Scirius](https://github.com/StamusNetworks/scirius) rule management.
 
 #### Modifications
 * Performance tuning for Elastic Stack
