@@ -7,9 +7,9 @@ Feedback, corrections, and suggestions are welcomed and appreciated. Reach out t
 
 # Configuration Steps
 
-[Setup Documentation](docs/setup.md)
+[Wiki](https://github.com/gradiuscypher/grIDS/wiki)
 
-To get started with configuring the system, follow the steps found in [setup.md](docs/setup.md). Each of the sections walks you through the parts of building a working all-in-one IDS system.
+To get started with configuring the system, follow the steps found in the [Wiki](https://github.com/gradiuscypher/grIDS/wiki). Each of the [Configuration](https://github.com/gradiuscypher/grIDS/wiki/Configuration) sections walks you through the parts of building a working all-in-one IDS system.
 
 # Screenshots
 Screenshots of some Kibana Dashboards that have been created and powered using this setup
