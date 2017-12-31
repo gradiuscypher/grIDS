@@ -1,5 +1,4 @@
 # Gradius ignores
-*.conf
 .idea/
 venv3/
 scripts/rule_tuner/downloaded.rules
