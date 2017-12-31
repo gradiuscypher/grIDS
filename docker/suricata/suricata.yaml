@@ -119,7 +119,7 @@ reference-config-file: /etc/suricata/reference.config
 # The default logging directory.  Any log or output file will be
 # placed here if its not specified with a full path name. This can be
 # overridden with the -l command line parameter.
-default-log-dir: /nsmdata/log/suricata/
+default-log-dir: /var/log/suricata/
 
 # global stats configuration
 stats:
@@ -142,6 +142,7 @@ outputs:
       enabled: yes
       filetype: regular #regular|syslog|unix_dgram|unix_stream|redis
       filename: eve.json
+      append: no
       #prefix: "@cee: " # prefix to prepend to each log entry
       # the following are valid when type: syslog above
       #identity: "suricata"
@@ -922,8 +923,8 @@ asn1-max-frames: 256
 
 # Run suricata as user and group.
 #run-as:
-#  user: suri
-#  group: suri
+  #user: suricata
+  #group: nsm
 
 # Some logging module will use that name in event as identifier. The default
 # value is the hostname
@@ -1120,7 +1121,7 @@ flow:
 # setups where both sides of a flow are not tagged with the same vlan
 # tag, we can ignore the vlan id's in the flow hashing.
 vlan:
-  use-for-tracking: true
+  use-for-tracking: false
 
 # Specific timeouts for flows. Here you can specify the timeouts that the
 # active flows will wait to transit from the current state to another, on each
