@@ -5,11 +5,15 @@ The goal for this project is to help people combine multiple open-source tools t
 
 Feedback, corrections, and suggestions are welcomed and appreciated. Reach out to me on [Twitter](https://www.twitter.com/0xgradius) or here on Github as an [Issue](https://github.com/gradiuscypher/grIDS/issues).
 
-# Configuration Steps
+# Manual Configuration Steps
 
 [Wiki](https://github.com/gradiuscypher/grIDS/wiki)
 
 To get started with configuring the system, follow the steps found in the [Wiki](https://github.com/gradiuscypher/grIDS/wiki). Each of the [Configuration](https://github.com/gradiuscypher/grIDS/wiki/Configuration) sections walks you through the parts of building a working all-in-one IDS system.
+
+# Docker Configuration Steps
+
+To deploy the NSM via Docker containers, follow the instructions found under the [Docker Configuration](https://github.com/gradiuscypher/grIDS/wiki/Docker-Configuration) section of the Wiki.
 
 # Screenshots
 Screenshots of some Kibana Dashboards that have been created and powered using this setup
