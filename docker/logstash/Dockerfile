@@ -1,7 +1,7 @@
 # Dockerfile to build a Logstash container with the proper configuration
 
 # Set the base image to Elastic's Logstash docker container
-FROM docker.elastic.co/logstash/logstash:6.1.1
+FROM docker.elastic.co/logstash/logstash:6.4.1
 
 # File Author
 MAINTAINER gradiuscypher
