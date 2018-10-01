@@ -27,6 +27,8 @@ RUN apt install -y filebeat
 
 # Copy the suricata config to its config location
 ADD filebeat.yml /etc/filebeat
+RUN chown root /etc/filebeat/filebeat.yml
+RUN chmod 0644 /etc/filebeat/filebeat.yml
 
 # Copy the suricata config to its config location
 ADD suricata.yaml /etc/suricata/suricata.yaml
