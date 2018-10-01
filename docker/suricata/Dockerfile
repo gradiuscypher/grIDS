@@ -28,9 +28,6 @@ RUN apt install -y filebeat
 # Copy the suricata config to its config location
 ADD filebeat.yml /etc/filebeat
 
-# Modify the filebeat config to only be editable by the owner
-CMD chmod go-w /etc/filebeat/filebeat.yml
-
 # Copy the suricata config to its config location
 ADD suricata.yaml /etc/suricata/suricata.yaml
 

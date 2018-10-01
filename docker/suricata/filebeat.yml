@@ -66,6 +66,7 @@ filebeat.prospectors:
 #============================= Filebeat modules ===============================
 
 filebeat.config.modules:
+  strict.perms: false
   # Glob pattern for configuration loading
   path: ${path.config}/modules.d/*.yml
 
