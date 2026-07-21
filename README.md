@@ -1,3 +1,6 @@
+# This project is now archived
+Thanks for the support and interest, but this project hasn't been updated in almost a decade, and there's probably other solutions by this point.
+
 # grIDS
 My network monitoring solution and tools that go along with it. This setup is designed to be contained in an all-in-one sort of system, but services can be separated into individual hosts if you have a higher load that requires more resources.
 
